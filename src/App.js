@@ -9,7 +9,7 @@ import ModalWindow from './components/ModalWindow/ModalWindow'
 import './App.scss'
 
 const client = new ApolloClient({
-  uri: `http://myplan-server.herokuapp.com/graphql`
+  uri: `https://myplan-server.herokuapp.com/graphql`
 })
 
 function App() {
