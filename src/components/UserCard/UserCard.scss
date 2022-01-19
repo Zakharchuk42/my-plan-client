@@ -1,0 +1,41 @@
+.UserCard {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .4s ease;
+  margin: 0 10px 20px 10px;
+  flex: 0 1 calc(33.333% - 20px);
+  display: flex;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &__image {
+    padding: 20px;
+    background: var(--mainColor);
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 65px;
+      height: 65px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 25px;
+    padding: 25px 25px 25px 0;
+    gap: 5px;
+
+    span {
+      font-weight: 700;
+      margin-right: auto;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.AddFormContent {
+
+  &__text-area {
+    width: 100%;
+    min-height: 150px;
+  }
+
+  &__close {
+    margin-right: 15px;
+    margin-left: auto;
+  }
+}

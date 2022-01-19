@@ -1,0 +1,30 @@
+.AddButton {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--mainColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s ease;
+  box-shadow: 0px 0px 50px rgb(0 0 0 / 10%);
+
+  &:hover {
+    background: #b9cd8e;
+  }
+
+  &__img {
+    width: 45px;
+    height: auto;
+    transition: all .3s ease;
+
+    &_active {
+      transform: rotate(45deg);
+    }
+  }
+}

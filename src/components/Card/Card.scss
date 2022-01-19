@@ -1,0 +1,94 @@
+.Card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .4s ease;
+  margin: 0 10px 20px 10px;
+  flex: 0 1 calc(25% - 20px);
+
+    @media screen and (max-width: 1359px) {
+      flex: 0 1 calc(33.333% - 20px);
+    }
+
+    @media screen and (max-width: 1000px) {
+      flex: 0 1 calc(50% - 20px);
+    }
+
+    @media screen and (max-width: 756px) {
+      flex: 0 1 100%;
+    }
+
+  &:hover {
+    transform: scale(1.03);
+
+    .Card__text {
+      color: var(--blackColor);
+      transition: all .4s ease;
+    }
+  }
+
+  &__title {
+    padding: 15px 25px;
+    background: var(--mainColor);
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__text {
+    padding: 15px 25px;
+    min-height: 80px;
+    font-size: 18px;
+    color: var(--greyColor);
+    transition: all .4s ease;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+  }
+
+  &__time {
+    color: var(--greyColor);
+  }
+
+  &__func-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__del {
+    margin-right: 15px;
+
+    &-img {
+      width: 25px;
+      height: auto;
+      fill: var(--greyColor);
+      transition: all .3s ease;
+
+      &:hover {
+        fill: var(--blackColor);
+      }
+    }
+  }
+
+  &__edit {
+
+    &-img {
+      width: 22px;
+      height: auto;
+      transform: rotate(180deg);
+      fill: var(--greyColor);
+      transition: all .3s ease;
+
+      &:hover {
+        fill: var(--blackColor);
+      }
+    }
+  }
+}

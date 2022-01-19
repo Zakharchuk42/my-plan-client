@@ -1,0 +1,45 @@
+.DelNoteContent {
+
+  &__del-item {
+    padding: 25px 80px;
+    color: var(--blackColor);
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    left: 50%;
+    transform: translate(-50%);
+
+    &:before {
+      content: '';
+      background: url("../../img/quote.svg") no-repeat;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 55px;
+      height: 55px;
+      opacity: 0.5;
+    }
+
+    &:after {
+      content: '';
+      background: url("../../img/quote.svg") no-repeat;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 55px;
+      height: 55px;
+      transform: rotate(180deg);
+      opacity: 0.5;
+    }
+
+    &-title {
+      margin-bottom: 25px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  &__text{
+    margin: 35px 0;
+  }
+}
