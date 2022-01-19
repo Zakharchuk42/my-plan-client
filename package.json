@@ -40,7 +40,7 @@
   "private": true,
   "name": "client",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "watch": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
