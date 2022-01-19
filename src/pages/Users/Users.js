@@ -8,8 +8,6 @@ const Users = ({data}) => {
 
   const {getAllUsers = []} = data
 
-  console.log(getAllUsers)
-
   return (
     <div className="User__list">
       {
