@@ -1,0 +1,36 @@
+.Sidebar {
+  background: var(--mainColor);
+  color: var(--whiteColor);
+  height: 100%;
+
+  &__time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+  }
+
+  &__block{
+
+    &-title{
+      background: var(--mainColorDark);
+      font-size: 18px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+    }
+
+    &-body{
+      padding: 25px 20px;
+    }
+  }
+
+  &__social-link {
+    font-size: 26px;
+    color: var(--whiteColor);
+
+    span {
+      margin-left: 30px;
+    }
+  }
+
+}

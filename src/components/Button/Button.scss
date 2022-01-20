@@ -17,7 +17,7 @@
   min-width: 150px;
 
   &:hover {
-    background: #b9cd8e;
+    background: var(--mainColorDark);
   }
   
   @media (max-width: 565px) {

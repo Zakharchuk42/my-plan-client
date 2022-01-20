@@ -1,15 +1,17 @@
 import React from 'react'
 import ApolloClient from 'apollo-boost'
 import {ApolloProvider} from 'react-apollo'
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 import MainScreen from './components/MainTable/MainTable'
 import ModalWindow from './components/ModalWindow/ModalWindow'
 
-import './App.scss'
+// const client = new ApolloClient({
+//   uri: `http://myplan-server.herokuapp.com/graphql`
+// })
 
 const client = new ApolloClient({
-  uri: `http://myplan-server.herokuapp.com/graphql`
+  uri: `http://localhost:2020/graphql`
 })
 
 function App() {

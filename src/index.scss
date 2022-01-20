@@ -1,18 +1,22 @@
 :root {
-  --mainColor: #aec086;
-  --greyColor: #b9c5c7;
+  --mainColor: #183153;
+  --mainColorDark: #0e1d32;
+  --greyColor: #5F697D;
   --blackColor: #000000;
   --whiteColor: #ffffff;
 }
 
+@import "./fonts/style.css";
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Cera Round Pro Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #e7eaef;
+  background: #f0f1f3;
+  color: var(--textColor);
 }
 
 code {

@@ -9,6 +9,14 @@
   flex: 0 1 calc(33.333% - 20px);
   display: flex;
 
+  @media (max-width: 1150px) {
+    flex: 0 1 calc(50% - 20px);
+  }
+
+  @media (max-width: 830px) {
+    flex: 0 1 calc(100% - 20px);
+  }
+
   &:hover {
     transform: scale(1.03);
   }

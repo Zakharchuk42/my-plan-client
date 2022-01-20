@@ -1,7 +1,13 @@
 .MainTable {
-  padding: 30px;
+  display: flex;
 
-  @media screen and (max-width: 1000px) {
-    padding: 15px;
+  &__sidebar {
+    flex: 0 0 300px;
+    min-height: 100vh;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    padding: 20px;
   }
 }
