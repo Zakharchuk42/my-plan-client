@@ -8,8 +8,7 @@ import  './Notes.scss'
 
 const Notes = ({data, addNote}) => {
 
-  const {getAllNotes = []} = data
-
+  const {getAllNotes = [], loading} = data
   return(
     <div className="Notes">
       <div className="Notes__list">

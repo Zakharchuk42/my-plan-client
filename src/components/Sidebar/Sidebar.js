@@ -7,6 +7,7 @@ import { faCodeBranch } from '@fortawesome/free-solid-svg-icons'
 import './Sidebar.scss'
 
 const Sidebar = () => {
+
   return (
     <div className="Sidebar">
       <div className="Sidebar__time">

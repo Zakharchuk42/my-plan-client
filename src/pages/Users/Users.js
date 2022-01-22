@@ -6,21 +6,24 @@ import './Users.scss'
 
 const Users = ({data}) => {
 
-  const {getAllUsers = []} = data
+  const {getAllUsers = [], loading} = data
 
   return (
-    <div className="User__list">
-      {
-        getAllUsers.map((user)=>{
-          return(
-            <UserCard
-              key={user.id}
-              data={user}
-            />
-          )
-        })
-      }
-    </div>
+    loading ? ('LOADING>>>>') : (
+      <div className="User__list">
+        {
+          getAllUsers.map((user)=>{
+            return(
+              <UserCard
+                key={user.id}
+                data={user}
+              />
+            )
+          })
+        }
+      </div>
+    )
+
   )
 }
 
