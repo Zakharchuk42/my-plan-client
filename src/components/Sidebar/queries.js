@@ -8,6 +8,7 @@ export const allNotesQueries = gql`
         text
         time
         id
+        day
       }
     }
   }

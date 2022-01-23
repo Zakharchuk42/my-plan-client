@@ -1,0 +1,93 @@
+.CalendarCell {
+  min-width: 80px;
+  min-height: 95px;
+  color: var(--greyColorLight);
+  background: var(--whiteColor);
+  cursor: pointer;
+  transition: all .3s ease;
+  display: flex;
+  justify-content: space-between;
+
+  &:hover {
+    background: var(--blueColorLight);
+  }
+
+  &__notes {
+    padding: 5px;
+  }
+
+  &__note {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--mainColor);
+    margin-right: 5px;
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__month {
+    color: var(--mainColor);
+  }
+
+  &__weekday {
+    background: var(--blueColorLight);
+
+    &:hover {
+      background: var(--whiteColor);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  &__day {
+    margin: 5px;
+
+    &_active {
+      margin: 3px;
+      background: tomato;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      color: var(--whiteColor);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        margin-top: -2px;
+      }
+    }
+  }
+
+  &__add {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--mainColor);
+    color: var(--whiteColor);
+    border-radius: 5px 0 0 0;
+    transition: all .3s ease;
+
+    &:hover {
+      background: tomato;
+    }
+
+    &_month {
+      background: var(--greyColorLight);
+      opacity: 0.4;
+
+    }
+  }
+}

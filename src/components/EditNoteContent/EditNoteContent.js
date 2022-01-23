@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {TextField} from '@mui/material'
 
 import stores from '../../store/stores'
@@ -12,7 +12,9 @@ const EditNoteContent = ({text, title}) => {
   const [titleState, setTitleTitle] = useState(title)
   const [textState, setTextText] = useState(text)
 
-  inputModalStore.setFormText(titleState, textState)
+  useEffect(()=>{
+    inputModalStore.setFormText(titleState, textState)
+  })
 
   return (
     <div className="EditNoteContent">

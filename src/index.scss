@@ -3,12 +3,14 @@
   --mainColor: #183153;
   --mainColorDark: #0e1d32;
   --greyColor: #5F697D;
-  --greyColorWeekDay: #f5f5f5;
+  --greyColorLight: #cbd8fd;
+  --blueColorLight: #ebf1ff;
   --blackColor: #000000;
   --whiteColor: #ffffff;
+  --tomatoColor: tomato;
 
   //border
-  --borderRadius: 10px;
+  --borderRadius: 5px;
 }
 
 @import "./fonts/style.css";

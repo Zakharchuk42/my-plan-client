@@ -1,0 +1,28 @@
+.SwitchColor {
+  &__box {
+    width: 25px;
+    height: 25px;
+    border-radius: var(--borderRadius);
+    border: 1px solid transparent;
+
+    &_main {
+      background: var(--whiteColorColor);
+      border: 1px solid var(--mainColor);
+    }
+    &_green {
+      background: #75c8cc;
+    }
+    &_pink {
+      background: #ffb4bb;
+    }
+    &_green-light {
+      background: #baffc9;
+    }
+    &_blue {
+      background: #bae1ff;
+    }
+    &_orange {
+      background: #ffe0ba;
+    }
+  }
+}

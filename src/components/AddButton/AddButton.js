@@ -12,7 +12,7 @@ const AddButton = observer(({addNote}) => {
 
   const {showModalStore} = stores
 
-  const toggleModal = showModalStore.isShow ? () => showModalStore.closeModal() : () => showModalStore.openModal('Add new note', <AddNoteContent />, addNote)
+  const toggleModal = showModalStore.isShow ? () => showModalStore.closeModal() : () => showModalStore.openModal('Add new note', <AddNoteContent />, addNote, 'today')
 
   const activeClass = showModalStore.isShow ? "AddButton__img_active" : ''
 

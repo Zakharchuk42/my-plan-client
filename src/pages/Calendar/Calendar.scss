@@ -5,18 +5,7 @@
   border-radius: var(--borderRadius);
   overflow: hidden;
   border: 1px solid var(--mainColor);
-
-  &__header {
-    background: var(--mainColorDark);
-    padding: 15px 25px;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--whiteColor);
-  }
-
-  &__weekdays {
-
-  }
+  margin-bottom: 20px;
 
   &__table {
     display: grid;
@@ -26,44 +15,8 @@
     grid-gap: 1px;
   }
 
-  &__cell {
-    min-width: 80px;
-    min-height: 80px;
-    padding: 5px 15px;
-    color: var(--mainColor);
-    background: var(--whiteColor);
-    cursor: pointer;
-    transition: all .3s ease;
+  &__footer {
     display: flex;
-    justify-content: flex-end;
-
-    &:hover {
-      background: #ebf1ff;
-    }
-
-    &_weekday {
-      background: #ebf1ff;
-
-      &:hover {
-        background: var(--whiteColor);
-      }
-    }
-  }
-
-  &__day {
-    background: var(--mainColor);
-    border-radius: 50%;
-    width: 33px;
-    height: 33px;
-    color: var(--whiteColor);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: 700;
-
-    span {
-      margin-top: -4px;
-    }
+    gap: 20px;
   }
 }

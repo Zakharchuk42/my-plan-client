@@ -1,18 +1,20 @@
-import {React, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {TextField} from '@mui/material'
 
 import stores from '../../store/stores'
 
 import './AddNoteContent.scss'
 
-const AddNoteContent = () => {
-
-  const { inputModalStore } = stores
+const AddNoteContent = ({day}) => {
+  const { inputModalStore, userStore } = stores
 
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
 
-  inputModalStore.setFormText(title, text)
+  useEffect(()=>{
+    inputModalStore.setFormText(title, text, userStore.userId, day)
+  })
+
 
   return (
     <div className="AddFormContent">
@@ -26,6 +28,7 @@ const AddNoteContent = () => {
           fullWidth
           value={title}
         />
+
         <TextField
           multiline
           rows={4}

@@ -4,6 +4,7 @@
   &__sidebar {
     flex: 0 0 300px;
     min-height: 100vh;
+    overflow: hidden;
   }
 
   &__content {

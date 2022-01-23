@@ -1,0 +1,75 @@
+.NoteCategory {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--borderRadius);
+  overflow: hidden;
+  border: 1px solid var(--mainColor);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    background: var(--mainColorDark);
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--whiteColor);
+  }
+
+  &__table {
+    background: var(--whiteColor);
+    padding: 25px 20px;
+  }
+
+  &__add-block{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  &__text {
+    margin: 0 15px;
+  }
+
+  &__currency-list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__currency-color {
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: var(--borderRadius);
+  }
+
+  &__button {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+    color: var(--mainColor);
+  }
+
+  &__buttons-del {
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover {
+      color: var(--tomatoColor);
+    }
+  }
+
+  &__buttons-edit {
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover {
+      color: var(--tomatoColor);
+    }
+  }
+}

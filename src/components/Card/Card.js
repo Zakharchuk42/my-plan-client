@@ -22,6 +22,7 @@ const Card = ({title, text, time, delNote, editNote}) => {
 
   const delNoteContent = <DelNoteContent text={text} title={title}/>
   const editNoteContent = <EditNoteContent text={text} title={title}/>
+
   return(
     <div className="Card">
       <div className="Card__title">

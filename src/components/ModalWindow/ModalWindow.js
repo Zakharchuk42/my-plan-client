@@ -10,9 +10,17 @@ import './ModalWindow.scss'
 const ModalWindow = observer(() => {
 
   const {showModalStore, inputModalStore} = stores
+  const {formText} = inputModalStore
+  const {information} = showModalStore
 
   const confirm = () => {
-    showModalStore.information.func({title: inputModalStore.formText.title, text: inputModalStore.formText.text, time: `${new Date().getTime()}`})
+    information.func({
+      title: formText.title,
+      text: formText.text,
+      time: `${new Date().getTime()}`,
+      userId: formText.userId,
+      day: formText.day})
+
     showModalStore.closeModal()
   }
 
@@ -23,14 +31,14 @@ const ModalWindow = observer(() => {
       <div className="ModalWindow__window">
         <div className="ModalWindow__header">
           <div className="ModalWindow__title">
-            {showModalStore.information.title}
+            {information.title}
           </div>
           <div className="ModalWindow__close" onClick={()=>showModalStore.closeModal()}>
             <img src={plus} alt='close' />
           </div>
         </div>
         <div className="ModalWindow__body">
-          {showModalStore.information.content}
+          {information.content}
         </div>
         <div className="ModalWindow__buttons">
           <div className="ModalWindow__close-btn">

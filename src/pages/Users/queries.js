@@ -6,9 +6,6 @@ export const allUsersQueries = gql `
       id
       username
       avatar
-      age
-      sex
-      goal
     }
   }
 `

@@ -8,22 +8,27 @@ import  './Notes.scss'
 
 const Notes = ({data, addNote}) => {
 
-  const {getAllNotes = [], loading} = data
+  const {getUser = [], loading} = data
+
   return(
     <div className="Notes">
-      <div className="Notes__list">
-        {getAllNotes.map((note) => {
-          return (
-            <Card
-              key={note.id}
-              title={note.title}
-              text={note.text}
-              id={note.id}
-              time={note.time}
-            />
-          )
-        })}
-      </div>
+      {
+        loading ?  ('LOADING') : (
+        <div className="Notes__list" >
+            {getUser.userNotes.map((note) => {
+              return (
+                <Card
+                key={note.id}
+                title={note.title}
+                text={note.text}
+                id={note.id}
+                time={note.time}
+                />
+              )
+            })}
+        </div>
+        )
+      }
       <AddButton addNote={addNote} />
     </div>
 

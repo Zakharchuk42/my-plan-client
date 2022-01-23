@@ -1,0 +1,17 @@
+.CalendarWeek {
+  display: grid;
+  font-size: 18px;
+  min-width: 80px;
+  min-height: 30px;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--mainColor);
+
+  &__weekday {
+    color: var(--whiteColor);
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 15px;
+  }
+}
