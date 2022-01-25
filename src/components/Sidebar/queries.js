@@ -9,6 +9,9 @@ export const allNotesQueries = gql`
         time
         id
         day
+        endTime
+        startTime
+        color
       }
     }
   }

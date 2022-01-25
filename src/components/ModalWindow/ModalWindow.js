@@ -15,13 +15,17 @@ const ModalWindow = observer(() => {
 
   const confirm = () => {
     information.func({
-      title: formText.title,
-      text: formText.text,
-      time: `${new Date().getTime()}`,
-      userId: formText.userId,
-      day: formText.day})
+    title: formText.title,
+    text: formText.text,
+    time: `${new Date().getTime()}`,
+    userId: formText.userId,
+    day: formText.day,
+    startTime: formText.startTime,
+    endTime: formText.endTime,
+    color: formText.color})
 
     showModalStore.closeModal()
+
   }
 
   const activeClass =  showModalStore.isShow ? 'ModalWindow_active' : ''

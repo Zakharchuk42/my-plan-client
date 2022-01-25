@@ -5,12 +5,14 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faPlus} from '@fortawesome/free-solid-svg-icons'
 import moment from 'moment'
 import stores from '../../store/stores'
-
+import {useNavigate} from 'react-router-dom'
 import './CalendarCell.scss'
 
 const CalendarCell = ({today, dayItem, addNote, getUser}) => {
 
-  const {showModalStore} = stores
+  const {showModalStore, inputModalStore} = stores
+
+  const navigate = useNavigate()
 
   const isCurrentDay = (day) => moment().isSame(day, 'day');
   const isSelectedMonth = (day) => today.isSame(day, 'month');
@@ -22,30 +24,35 @@ const CalendarCell = ({today, dayItem, addNote, getUser}) => {
 
   const startDay = dayItem.startOf('day').format('x')
 
+  const openDay = (week) => {
+    navigate('/notes')
+    inputModalStore.openWeek(week)
+  }
+
   return (
-    <div
-      className={`CalendarCell ${weekday} ${month}`}
-      onClick={()=>console.log('Open day')}>
-      <div className="CalendarCell__notes">
-        {getUser.userNotes.map((note)=>{
-          if(note.day === startDay){
-            return <div className="CalendarCell__note" key={note.time}> </div>
-          }
-        })}
-      </div>
-      <div className="CalendarCell__content">
-        <div className={`CalendarCell__day ${day}`}>
-          <span>{dayItem.format('D')}</span>
+      <div
+        className={`CalendarCell ${weekday} ${month}`}
+        onClick={()=>openDay(dayItem)}>
+        <div className="CalendarCell__notes">
+          {getUser.userNotes.map((note)=>{
+            if(note.day === startDay){
+              return <div className="CalendarCell__note" style={{ background: note.color}} key={note.time}> </div>
+            }
+          })}
         </div>
-        <div className={`CalendarCell__add ${add}`}
-             onClick={(e)=> {
-               e.stopPropagation();
-               showModalStore.openModal('Add new note', <AddNoteContent day={dayItem.format('x')} />, addNote)
-             }}>
-          <FontAwesomeIcon icon={faPlus} />
+        <div className="CalendarCell__content">
+          <div className={`CalendarCell__day ${day}`}>
+            <span>{dayItem.format('D')}</span>
+          </div>
+          <div className={`CalendarCell__add ${add}`}
+               onClick={(e)=> {
+                 e.stopPropagation();
+                 showModalStore.openModal('Add new note', <AddNoteContent day={dayItem.format('x')} />, addNote)
+               }}>
+            <FontAwesomeIcon icon={faPlus} />
+          </div>
         </div>
       </div>
-    </div>
   )
 }
 

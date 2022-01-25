@@ -1,7 +1,69 @@
 .Notes {
 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    background: var(--mainColorDark);
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--whiteColor);
+    border-radius: var(--borderRadius);
+    margin-bottom: 20px;
+  }
+
+  &__handler {
+    display: flex;
+    gap: 10px;
+
+    &_prev {
+      transform: scaleX(-1);
+      cursor: pointer;
+      transition: all .3s ease;
+
+      &:hover {
+        color: var(--tomatoColor);
+      }
+    }
+
+    &_today {
+      margin: 0 10px;
+      cursor: pointer;
+      transition: all .3s ease;
+
+      &:hover {
+        color: var(--tomatoColor);
+      }
+    }
+
+    &_next {
+      cursor: pointer;
+      transition: all .3s ease;
+
+      &:hover {
+        color: var(--tomatoColor);
+      }
+    }
+  }
+
+
+
+  &__back{
+    cursor: pointer;
+    transition: all .3s ease;
+    gap: 10px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: var(--tomatoColor);
+    }
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
   }
 }

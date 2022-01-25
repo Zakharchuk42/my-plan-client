@@ -5,22 +5,26 @@ import {TextField} from '@mui/material'
 import Button from '../Button/Button'
 import withHoc from './NoteCategoryHoc'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faPencil, faTrashCan} from '@fortawesome/free-solid-svg-icons'
+import {faTrashCan} from '@fortawesome/free-solid-svg-icons'
 
 import './NoteCategory.scss'
 
-const NoteCategory = ({data, addNoteCategory}) => {
-
+const NoteCategory = ({data, addNoteCategory, delNoteCategory}) => {
   const {getUser={}, loading} = data
 
-  const [color, setColor] = useState('#ffffff')
+  const [color, setColor] = useState('#183153')
   const [category, setCategory] = useState('')
 
   const addCategory = () => {
     addNoteCategory({title: category, color: color, userId: "61ec05197ff837bb7e468dd2"})
     setCategory('')
-    setColor('#ffffff')
+    setColor('#183153')
   }
+
+  const delCategory = (id) => {
+    delNoteCategory({id})
+  }
+
 
   const chooseColor = (e) => {
     setColor(e.target.value)
@@ -60,15 +64,7 @@ const NoteCategory = ({data, addNoteCategory}) => {
                     <FontAwesomeIcon
                       className="NoteCategory__buttons-del"
                       icon={faTrashCan}
-                      onClick={(e)=> {
-                        console.log('del')
-                      }}/>
-                    <FontAwesomeIcon
-                      className="NoteCategory__buttons-edit"
-                      icon={faPencil}
-                      onClick={(e)=> {
-                        console.log('edit')
-                      }}/>
+                      onClick={()=>delCategory(category.id)}/>
                   </div>
                 </div>
               )

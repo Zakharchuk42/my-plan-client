@@ -7,20 +7,34 @@ class InputModalStore {
     text: '',
     userId: '',
     day: '',
-    categoryColor: '',
+    color: '',
+    startTime: '',
+    endTime: '',
+  }
+
+  week = {
+    week: ''
   }
 
   constructor() {
     makeAutoObservable(this)
   }
 
-  setFormText(title, text, userId, day, categoryColor) {
+  setFormText({title, text, startTime, endTime, userId, day, color} ) {
     this.formText = {
       title,
       text,
+      color,
+      startTime,
+      endTime,
       userId,
       day,
-      categoryColor,
+    }
+  }
+
+  openWeek = (week) => {
+    this.week = {
+      week
     }
   }
 

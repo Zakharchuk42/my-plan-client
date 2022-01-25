@@ -10,7 +10,9 @@ const SwitchColor = ({color, chooseColor}) => {
 
   return (
     <>
-      <FormControl className="SwitchColor">
+      <FormControl className="SwitchColor"
+                   sx={{ mr: 2}}
+                   margin="normal">
         <InputLabel>Color</InputLabel>
         <Select
           value={color}

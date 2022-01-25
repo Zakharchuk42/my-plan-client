@@ -9,10 +9,13 @@ export const delNoteMutation = gql `
 `
 
 export const editNoteMutation = gql`
-  mutation updateNote($id: ID, $title: String, $text: String){
-    updateNote(id: $id, title: $title, text: $text) {
-      title,
+  mutation updateNote($id: ID, $title: String, $text: String, $startTime: String, $endTime: String, $color: String){
+    updateNote(id: $id, title: $title, text: $text, startTime: $startTime, endTime: $endTime, color: $color) {
+      title
       text
+      startTime
+      endTime
+      color
     }
   }
 `

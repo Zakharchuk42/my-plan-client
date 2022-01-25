@@ -4,7 +4,6 @@ import './DelNoteContent.scss'
 
 const DelNoteContent = ({text, title}) => {
 
-
   return (
     <div className="DelNoteContent">
       <div className="DelNoteContent__content">

@@ -1,31 +1,19 @@
 import React from 'react'
 import withGraphQl from './CardHoc'
-import IcoTrash from '../../img/svgCollection/IcoTrash'
-import IcoPencil from '../../img/svgCollection/IcoPencil'
 import DelNoteContent from '../DelNoteContent/DelNoteContent'
 import EditNoteContent from '../EditNoteContent/EditNoteContent'
 import stores from '../../store/stores'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faClock, faPencil, faTrashCan} from '@fortawesome/free-solid-svg-icons'
 
 import './Card.scss'
 
-const Card = ({title, text, time, delNote, editNote}) => {
+const Card = ({title, text, delNote, editNote, startTimeProps, endTimeProps, colorProps}) => {
   const {showModalStore} = stores
 
-  const now = new Date(Number(time))
-  const hr = now.getHours()
-  const min = now.getMinutes()
-  const date = now.getDate()
-  const mnt = now.getMonth() + 1
-  const yr = now.getFullYear()
-
-  const fullDate = `${date}.${Number(mnt) < 10 ? `0${mnt}` : mnt}.${yr} ${hr}:${Number(min) < 10 ? `0${min}` : min}`
-
-  const delNoteContent = <DelNoteContent text={text} title={title}/>
-  const editNoteContent = <EditNoteContent text={text} title={title}/>
-
   return(
-    <div className="Card">
-      <div className="Card__title">
+    <div className="Card" >
+      <div className="Card__title" style={{background: colorProps ? colorProps : '#183153'}}>
         {title}
       </div>
       <div className="Card__text">
@@ -33,18 +21,27 @@ const Card = ({title, text, time, delNote, editNote}) => {
       </div>
       <div className="Card__footer">
         <div className="Card__time">
-          {fullDate}
+          <FontAwesomeIcon icon={faClock} />
+          {`${startTimeProps} - ${endTimeProps}`}
         </div>
         <div className="Card__func-button">
-          <div
-            onClick={()=>showModalStore.openModal('Confirm to delete note', delNoteContent, delNote)}
-            className="Card__del">
-            <IcoTrash classes={'Card__del-img'}/>
-          </div>
-          <div onClick={()=>showModalStore.openModal('Confirm to edit note', editNoteContent, editNote)}
-               className="Card__edit">
-            <IcoPencil classes={'Card__edit-img'}/>
-          </div>
+          <FontAwesomeIcon
+            className="TodayNotes__buttons-del"
+            icon={faTrashCan}
+            onClick={(e)=> {
+              showModalStore.openModal('Confirm to delete note', <DelNoteContent text={text} title={title}/>, delNote)
+            }}/>
+          <FontAwesomeIcon
+            className="TodayNotes__buttons-edit"
+            icon={faPencil}
+            onClick={(e)=> {
+              showModalStore.openModal('Confirm to edit note', <EditNoteContent
+                textProps={text}
+                titleProps={title}
+                colorProps={colorProps}
+                startTimeProps={startTimeProps}
+                endTimeProps={endTimeProps}/>, editNote)
+            }}/>
         </div>
       </div>
     </div>

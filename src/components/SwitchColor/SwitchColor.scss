@@ -1,12 +1,12 @@
 .SwitchColor {
   &__box {
-    width: 25px;
-    height: 25px;
+    width: 19px;
+    height: 19px;
     border-radius: var(--borderRadius);
     border: 1px solid transparent;
 
     &_main {
-      background: var(--whiteColorColor);
+      background: var(--mainColor);
       border: 1px solid var(--mainColor);
     }
     &_green {

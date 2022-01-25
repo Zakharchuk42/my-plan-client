@@ -43,6 +43,9 @@ const Sidebar = ({data}) => {
                      title={note.title}
                      text={note.text}
                      id={note.id}
+                     startTime={note.startTime}
+                     endTime={note.endTime}
+                     color={note.color}
                    />
                   )
                 }

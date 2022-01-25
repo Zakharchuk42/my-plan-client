@@ -9,6 +9,9 @@ export const allNotesQueries = gql`
         time
         id
         day
+        startTime
+        endTime
+        color
       },
       noteCategory {
         title

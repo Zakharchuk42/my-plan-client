@@ -3,7 +3,6 @@ import Sidebar from '../Sidebar/Sidebar'
 
 import {Route, Routes} from 'react-router-dom'
 import Notes from '../../pages/Notes/Notes'
-import Users from '../../pages/Users/Users'
 import Home from '../../pages/Home/Home'
 import Calendar from '../../pages/Calendar/Calendar'
 
@@ -20,7 +19,6 @@ const MainScreen = () => {
           <Route path={'/'} element={<Home/>}/>
           <Route path={'/calendar'} element={<Calendar/>}/>
           <Route path={'/notes'} element={<Notes/>}/>
-          <Route path={'/users'} element={<Users/>}/>
         </Routes>
       </div>
     </div>

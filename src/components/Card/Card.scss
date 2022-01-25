@@ -5,24 +5,12 @@
   cursor: pointer;
   overflow: hidden;
   transition: all .3s ease;
-  margin: 0 15px 20px 10px;
-  flex: 0 1 calc(25% - 30px);
-  box-shadow: 0px 4px 0px 0px rgba(34, 60, 80, 0.2);
-
-    @media screen and (max-width: 1500px) {
-      flex: 0 1 calc(33.333% - 30px);
-    }
-
-    @media screen and (max-width: 1300px) {
-      flex: 0 1 calc(50% - 30px);
-    }
-
-    @media screen and (max-width: 1000px) {
-      flex: 0 1 100%;
-    }
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  width: 250px;
+  height: 170px;
 
   &:hover {
-    box-shadow: 0px 4px 0px 0px var(--mainColor);
+    transform: scale(1.02);
 
     .Card__text {
       color: var(--mainColor);
@@ -31,13 +19,12 @@
   }
 
   &:active {
-    transform: scale(0.98);
+    transform: scale(1);
     transition: all 0.01s ease;
   }
 
   &__title {
-    padding: 15px 25px;
-    background: var(--mainColor);
+    padding: 15px 15px;
     color: #fff;
     font-size: 18px;
     font-weight: 700;
@@ -47,13 +34,13 @@
   }
 
   &__text {
-    padding: 15px 25px;
+    padding: 15px 15px;
     font-size: 16px;
     color: var(--greyColor);
     transition: all .4s ease;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 58px;
+    height: 35px;
     position: relative;
 
     &:after {
@@ -71,17 +58,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 25px;
+    padding: 15px 15px;
   }
 
   &__time {
     color: var(--greyColor);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-right: 30px;
   }
 
   &__func-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+    color: var(--greyColor);
   }
 
   &__del {

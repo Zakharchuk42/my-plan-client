@@ -7,21 +7,19 @@ class ShowModalStore {
     title: '',
     content: '',
     func: '',
-    day: '',
   }
 
   constructor() {
     makeAutoObservable(this)
   }
 
-  openModal(title, content, func, day) {
+  openModal(title, content, func) {
     this.isShow = true
 
     this.information = {
       title,
       content,
       func,
-      day,
     }
   }
 
