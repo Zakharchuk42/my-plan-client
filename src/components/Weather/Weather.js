@@ -1,18 +1,20 @@
 import React from 'react'
+import BlockHeader from '../BlockHeader/BlockHeader'
+import BlockTable from '../BlockTable/BlockTable'
 
 import './Weather.scss'
 
 const Weather = () => {
   return (
     <div className="Weather">
-      <div className="Weather__header">
+      <BlockHeader>
         <div className="Weather__title">
           Weather
         </div>
-      </div>
-      <div className="Weather__table">
-
-      </div>
+      </BlockHeader>
+      <BlockTable>
+        There will be weather...
+      </BlockTable>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import AddNoteContent from '../AddNoteContent/AddNoteContent'
 import stores from '../../store/stores'
 
 import './NotesDay.scss'
+import Loader from '../Loader/Loader'
 
 const NotesDay = ({singleDay, data, addNote}) => {
 
@@ -22,7 +23,11 @@ const NotesDay = ({singleDay, data, addNote}) => {
       </div>
       <div className="NotesDay__notes">
         {
-          loading ?  ('LOADING') : (
+          loading ?  (
+            <div className="NotesDay__loader">
+              <Loader />
+            </div>
+          ) : (
           <div className="Notes__list" >
               {getUser.userNotes.map((note) => {
                 if(note.day === startDay) {

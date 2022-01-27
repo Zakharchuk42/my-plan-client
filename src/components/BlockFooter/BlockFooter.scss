@@ -1,0 +1,32 @@
+.BlockFooter {
+  display: flex;
+  justify-content: space-between;
+
+  &__reserve-time {
+    svg {
+      margin-right: 10px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &-del {
+      transition: all .3s ease;
+
+      &:hover {
+        color: var(--tomatoColor);
+      }
+    }
+
+    &-edit {
+      transition: all .3s ease;
+
+      &:hover {
+        color: var(--tomatoColor);
+      }
+    }
+  }
+}

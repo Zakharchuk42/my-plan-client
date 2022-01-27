@@ -1,17 +1,13 @@
 import React from 'react'
-import DelNoteContent from '../DelNoteContent/DelNoteContent'
-import EditNoteContent from '../EditNoteContent/EditNoteContent'
-import stores from '../../store/stores'
 import withHoc from './TodayNotesHoc'
+import BlockFooter from '../BlockFooter/BlockFooter'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faClock, faTrashCan, faPencil, faBookmark} from '@fortawesome/free-solid-svg-icons'
+import {faBookmark} from '@fortawesome/free-solid-svg-icons'
 
 import './TodayNotes.scss'
 
 const TodayNotes = ({title, text, delNote, editNote, endTime, startTime, color}) => {
-
-  const {showModalStore} = stores
 
   return (
       <div className="TodayNotes"  onClick={()=>console.log('test')}>
@@ -20,33 +16,14 @@ const TodayNotes = ({title, text, delNote, editNote, endTime, startTime, color})
           {title}
         </div>
         <div className="TodayNotes__footer">
-          <div className="TodayNotes__reserve-time">
-            <FontAwesomeIcon icon={faClock} />
-            {`${startTime} - ${endTime}`}
-          </div>
-          <div className="TodayNotes__buttons">
-            <FontAwesomeIcon
-              className="TodayNotes__buttons-del"
-              icon={faTrashCan}
-              onClick={(e)=> {
-                e.stopPropagation();
-                showModalStore.openModal('Confirm to delete note', <DelNoteContent text={text} title={title}/>, delNote)
-              }}/>
-            <FontAwesomeIcon
-              className="TodayNotes__buttons-edit"
-              icon={faPencil}
-              onClick={(e)=> {
-                e.stopPropagation();
-                showModalStore.openModal('Confirm to edit note',
-                  <EditNoteContent
-                    titleProps={title}
-                    textProps={text}
-                    startTimeProps={startTime}
-                    endTimeProps={endTime}
-                    colorProps={color}/>,
-                  editNote)
-              }}/>
-          </div>
+          <BlockFooter
+            color={color}
+            title={title}
+            text={text}
+            delNote={delNote}
+            editNote={editNote}
+            endTime={endTime}
+            startTime={startTime}/>
         </div>
       </div>
   )

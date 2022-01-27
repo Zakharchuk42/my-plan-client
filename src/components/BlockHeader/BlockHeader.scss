@@ -1,0 +1,10 @@
+.BlockHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--mainColorDark);
+  padding: 15px 25px;
+  font-weight: 700;
+  color: var(--whiteColor);
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+}

@@ -19,37 +19,7 @@
   }
 
   &__footer {
-    display: flex;
-    justify-content: space-between;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--mainColorDark);
-  }
-
-  &__reserve-time {
-    svg {
-      margin-right: 10px;
-    }
-  }
-
-  &__buttons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    &-del {
-      transition: all .3s ease;
-
-        &:hover {
-          color: var(--tomatoColor);
-        }
-    }
-
-    &-edit {
-      transition: all .3s ease;
-
-      &:hover {
-        color: var(--tomatoColor);
-      }
-    }
   }
 }

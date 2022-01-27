@@ -15,6 +15,14 @@
     grid-gap: 1px;
   }
 
+  &__loader {
+    background: var(--whiteColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 575px;
+  }
+
   &__footer {
     display: flex;
     gap: 20px;

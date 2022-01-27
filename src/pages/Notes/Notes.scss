@@ -1,17 +1,5 @@
 .Notes {
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    background: var(--mainColorDark);
-    padding: 15px 25px;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--whiteColor);
-    border-radius: var(--borderRadius);
-    margin-bottom: 20px;
-  }
-
   &__handler {
     display: flex;
     gap: 10px;

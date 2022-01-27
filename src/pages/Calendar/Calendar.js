@@ -6,13 +6,14 @@ import CalendarHeader from '../../components/CalendarHeader/CalendarHeader'
 import CalendarCell from '../../components/CalendarCell/CalendarCell'
 import NoteCategory from '../../components/NoteCategory/NoteCategory'
 import Weather from '../../components/Weather/Weather'
+import Loader from '../../components/Loader/Loader'
 
 import './Calendar.scss'
 
 const Calendar = ({addNote, data}) => {
   moment.updateLocale('en', {week: {dow: 1}})
 
-  const { getUser={}, loading } = data
+  const { getUser={}, loading} = data
 
   const [today, setToday] = useState(moment())
 
@@ -25,37 +26,43 @@ const Calendar = ({addNote, data}) => {
   const nextHandler = () => setToday(prev => prev.clone().add(1, 'month'))
 
   return (
-    loading ? ('LOADING') : (
-      <>
-        <div className='Calendar'>
-          <CalendarHeader
-            today={today}
-            prevHandler={prevHandler}
-            todayHandler={todayHandler}
-            nextHandler={nextHandler}/>
-          <CalendarWeek />
-          <div className="Calendar__table">
-            {
-              totalDaysArray.map((dayItem)=>{
-                return(
-                  <CalendarCell
-                    key={dayItem.unix()}
-                    today={today}
-                    dayItem={dayItem}
-                    addNote={addNote}
-                    getUser={getUser}
-                  />
-                )
-              })
-            }
-          </div>
-        </div>
-        <div className='Calendar__footer'>
-          <NoteCategory />
-          <Weather />
-        </div>
-      </>
-    )
+    <>
+      <div className='Calendar'>
+        <CalendarHeader
+          today={today}
+          prevHandler={prevHandler}
+          todayHandler={todayHandler}
+          nextHandler={nextHandler}/>
+        <CalendarWeek />
+        {
+          loading ? (
+            <div className="Calendar__loader">
+              <Loader />
+            </div>
+          ) : (
+            <div className="Calendar__table">
+              {
+                totalDaysArray.map((dayItem)=>{
+                  return(
+                    <CalendarCell
+                      key={dayItem.unix()}
+                      today={today}
+                      dayItem={dayItem}
+                      addNote={addNote}
+                      getUser={getUser}
+                    />
+                  )
+                })
+              }
+            </div>
+          )
+        }
+      </div>
+      <div className='Calendar__footer'>
+        <NoteCategory />
+        <Weather />
+      </div>
+    </>
   )
 }
 

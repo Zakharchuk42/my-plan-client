@@ -6,8 +6,11 @@ import Button from '../Button/Button'
 import withHoc from './NoteCategoryHoc'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faTrashCan} from '@fortawesome/free-solid-svg-icons'
+import BlockHeader from '../BlockHeader/BlockHeader'
+import BlockTable from '../BlockTable/BlockTable'
 
 import './NoteCategory.scss'
+import Loader from '../Loader/Loader'
 
 const NoteCategory = ({data, addNoteCategory, delNoteCategory}) => {
   const {getUser={}, loading} = data
@@ -32,12 +35,12 @@ const NoteCategory = ({data, addNoteCategory, delNoteCategory}) => {
 
   return (
     <div className="NoteCategory">
-      <div className="NoteCategory__header">
+      <BlockHeader>
         <div className="NoteCategory__title">
           My category
         </div>
-      </div>
-      <div className="NoteCategory__table">
+      </BlockHeader>
+      <BlockTable>
         <div className="NoteCategory__add-block">
           <div className="NoteCategory__color">
             <SwitchColor color={color} chooseColor={chooseColor}/>
@@ -54,7 +57,11 @@ const NoteCategory = ({data, addNoteCategory, delNoteCategory}) => {
           </div>
         </div>
         <div className="NoteCategory__list-category">
-          {loading ? ('LOADING') : (
+          {loading ? (
+            <div className="NoteCategory__loader">
+              <Loader />
+            </div>
+          ) : (
             getUser.noteCategory.map((category) => {
               return (
                 <div className="NoteCategory__currency-list" key={category.id}>
@@ -71,7 +78,7 @@ const NoteCategory = ({data, addNoteCategory, delNoteCategory}) => {
             })
           )}
         </div>
-      </div>
+      </BlockTable>
     </div>
   )
 }

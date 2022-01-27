@@ -4,6 +4,7 @@ import Navigation from '../Navigation/Navigation'
 import Time from '../Time/Time'
 import TodayNotes from '../TodayNotes/TodayNotes'
 import withHoc from '../Sidebar/SidebarHoc'
+import Loader from '../Loader/Loader'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCodeBranch } from '@fortawesome/free-solid-svg-icons'
@@ -34,7 +35,11 @@ const Sidebar = ({data}) => {
           Today
         </div>
         <div className="Sidebar__block-body">
-          { loading ?  ('LOADING') :
+          { loading ?  (
+              <div className="Sidebar__loader">
+                <Loader white/>
+              </div>
+            ) :
             (getUser.userNotes.map((note)=>{
               if(note.day === today) {
                return (

@@ -8,6 +8,7 @@ import {faCalendarWeek, faPlay, faSquareCaretLeft} from '@fortawesome/free-solid
 import {useNavigate} from 'react-router'
 
 import  './Notes.scss'
+import BlockHeader from '../../components/BlockHeader/BlockHeader'
 
 const Notes = ({data, addNote}) => {
   moment.updateLocale('en', {week: {dow: 1}})
@@ -40,7 +41,7 @@ const Notes = ({data, addNote}) => {
 
   return(
     <div className="Notes">
-      <div className="Notes__header">
+      <BlockHeader >
         <div className="Notes__back"
         onClick={()=>goBack()}>
           <FontAwesomeIcon icon={faSquareCaretLeft} /> Calendar
@@ -56,7 +57,7 @@ const Notes = ({data, addNote}) => {
             <FontAwesomeIcon icon={faPlay} />
           </div>
         </div>
-      </div>
+      </BlockHeader>
       {weekArray.map((singleDay) => {
         return (
           <NotesDay

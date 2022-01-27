@@ -24,6 +24,12 @@
     }
   }
 
+  &__loader {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+
   &__social-link {
     font-size: 26px;
     color: var(--whiteColor);

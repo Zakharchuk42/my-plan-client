@@ -21,10 +21,6 @@ const Navigation = () => {
         <FontAwesomeIcon icon={faBook}  className='Navigation__ico'/>
         Notes
       </NavLink>
-      <NavLink className='Navigation__link' to="/users" >
-        <FontAwesomeIcon icon={faUser}  className='Navigation__ico'/>
-        Users
-      </NavLink>
     </nav>
   );
 };
